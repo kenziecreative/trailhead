@@ -2,7 +2,14 @@
 # Pre-commit secrets hook: checks staged files for common secret patterns
 # Registered as PreToolUse hook, triggers when Bash command contains "git commit"
 
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
+source "$(dirname "$0")/hook-utils.sh"
+trap 'log_error "pre-commit-secrets" "$BASH_COMMAND failed (line $LINENO)"; exit 0' ERR
+
+# PROJECT_DIR is set by hook-utils.sh
+
+# This hook checks staged files which requires git. No-op in non-git projects.
+is_git_project || exit 0
+
 STAGED_FILES=$(git -C "$PROJECT_DIR" diff --cached --name-only 2>/dev/null)
 [ -z "$STAGED_FILES" ] && exit 0
 

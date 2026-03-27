@@ -2,7 +2,14 @@
 # Milestone check hook: fires when Claude stops responding
 # If recent commits look like milestone work, blocks until STATE.md is updated
 
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
+source "$(dirname "$0")/hook-utils.sh"
+trap 'log_error "milestone-check" "$BASH_COMMAND failed (line $LINENO)"; exit 0' ERR
+
+# PROJECT_DIR is set by hook-utils.sh
+
+# This hook is entirely git-dependent (checks recent commits). No-op in non-git projects.
+is_git_project || exit 0
+
 RECENT_COMMITS=$(git -C "$PROJECT_DIR" log --oneline --since='30 minutes ago' -5 2>/dev/null || echo "")
 [ -z "$RECENT_COMMITS" ] && exit 0
 
