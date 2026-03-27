@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Resolve CLAUDE_PLUGIN_ROOT blocker and restructure CLAUDE.md templates around the two-system architecture (completed 2026-03-27)
 - [ ] **Phase 2: Settings** - Expand generated settings.json from minimal to full platform coverage with project-type variants
-- [ ] **Phase 3: Hooks** - Implement complete session lifecycle with compaction recovery and error handling
+- [x] **Phase 3: Hooks** - Implement complete session lifecycle with compaction recovery and error handling (completed 2026-03-27)
 - [ ] **Phase 4: Non-Code and Skills** - Add non-code project templates, differentiated interview flow, and handoff/resume skills
 - [ ] **Phase 5: Infrastructure** - Add MCP template generation and decisions archive with sanity-check integration
 
@@ -107,6 +107,6 @@ Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. De
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-27 |
 | 2. Settings | 1/2 | In progress | - |
-| 3. Hooks | 0/3 | Not started | - |
+| 3. Hooks | 3/3 | Complete   | 2026-03-27 |
 | 4. Non-Code and Skills | 0/TBD | Not started | - |
 | 5. Infrastructure | 0/TBD | Not started | - |
