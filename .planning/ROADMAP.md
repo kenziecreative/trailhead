@@ -46,10 +46,10 @@ Plans:
   3. Code projects get allow rules for build/test commands; non-code projects get includeGitInstructions:false and keep-coding-instructions:false
   4. Generated settings.json includes env block with KNZINIT_PROJECT_TYPE and KNZINIT_VERSION populated at scaffold time
   5. Generated settings.json sets plansDirectory to .planning/plans for the in-project planning workflow
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — Settings template + SKILL.md merge logic with project-type adaptation
 
 ### Phase 3: Hooks
 **Goal**: Every context boundary (compaction, clear, new session) recovers gracefully via a complete session lifecycle hook chain with robust error handling
@@ -103,7 +103,7 @@ Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. De
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-27 |
-| 2. Settings | 0/TBD | Not started | - |
+| 2. Settings | 0/1 | Not started | - |
 | 3. Hooks | 0/TBD | Not started | - |
 | 4. Non-Code and Skills | 0/TBD | Not started | - |
 | 5. Infrastructure | 0/TBD | Not started | - |
