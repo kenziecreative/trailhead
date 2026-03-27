@@ -9,10 +9,10 @@ Requirements for knzinit v2 release. Each maps to roadmap phases.
 
 ### Architecture
 
-- [ ] **ARCH-01**: Scaffold documentation and CLAUDE.md template reflect the platform's two-system architecture (instruction system + learning system) rather than the 5-layer memory model (B-01)
-- [ ] **ARCH-02**: Generated root CLAUDE.md stays under 200 lines with detail loaded on-demand via .claude/rules/, subdirectory CLAUDE.md, skills, and @import (B-02)
-- [ ] **ARCH-03**: Generated CLAUDE.md places critical behavioral instructions in the first third of the file (B-03)
-- [ ] **ARCH-04**: Generated CLAUDE.md includes concise auto-memory guidance (200-line cap, index+topic pattern, machine-local scope, STATE.md preferred for critical state) (B-04)
+- [x] **ARCH-01**: Scaffold documentation and CLAUDE.md template reflect the platform's two-system architecture (instruction system + learning system) rather than the 5-layer memory model (B-01)
+- [x] **ARCH-02**: Generated root CLAUDE.md stays under 200 lines with detail loaded on-demand via .claude/rules/, subdirectory CLAUDE.md, skills, and @import (B-02)
+- [x] **ARCH-03**: Generated CLAUDE.md places critical behavioral instructions in the first third of the file (B-03)
+- [x] **ARCH-04**: Generated CLAUDE.md includes concise auto-memory guidance (200-line cap, index+topic pattern, machine-local scope, STATE.md preferred for critical state) (B-04)
 
 ### Settings
 
@@ -47,11 +47,11 @@ Requirements for knzinit v2 release. Each maps to roadmap phases.
 
 ### Infrastructure
 
-- [ ] **INFR-01**: CLAUDE_PLUGIN_ROOT verified as stable, or fallback path resolution added if unstable (B-29)
-- [ ] **INFR-02**: All scaffolded files include version marker as HTML comment (<!-- knzinit v2.0.0 -->) (B-21)
+- [x] **INFR-01**: CLAUDE_PLUGIN_ROOT verified as stable, or fallback path resolution added if unstable (B-29)
+- [x] **INFR-02**: All scaffolded files include version marker as HTML comment (<!-- knzinit v2.0.0 -->) (B-21)
 - [ ] **INFR-03**: Scaffold generates .mcp.json template for projects using external services, with enableAllProjectMcpServers in settings (B-19)
 - [ ] **INFR-04**: Scaffold generates decisions-archive.md and sanity check warns when STATE.md decisions exceed 20-entry cap (B-20)
-- [ ] **INFR-05**: Generated CLAUDE.md includes guidance on scope-restricted settings (autoMemoryDirectory, autoMode) that users must configure at user/local scope (B-24)
+- [x] **INFR-05**: Generated CLAUDE.md includes guidance on scope-restricted settings (autoMemoryDirectory, autoMode) that users must configure at user/local scope (B-24)
 
 ## v2 Requirements
 
@@ -83,10 +83,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ARCH-01 | Phase 1 | Pending |
-| ARCH-02 | Phase 1 | Pending |
-| ARCH-03 | Phase 1 | Pending |
-| ARCH-04 | Phase 1 | Pending |
+| ARCH-01 | Phase 1 | Complete |
+| ARCH-02 | Phase 1 | Complete |
+| ARCH-03 | Phase 1 | Complete |
+| ARCH-04 | Phase 1 | Complete |
 | SETT-01 | Phase 2 | Pending |
 | SETT-02 | Phase 2 | Pending |
 | SETT-03 | Phase 2 | Pending |
@@ -106,11 +106,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NCODE-04 | Phase 4 | Pending |
 | SKIL-01 | Phase 4 | Pending |
 | SKIL-02 | Phase 4 | Pending |
-| INFR-01 | Phase 1 | Pending |
-| INFR-02 | Phase 1 | Pending |
+| INFR-01 | Phase 1 | Complete |
+| INFR-02 | Phase 1 | Complete |
 | INFR-03 | Phase 5 | Pending |
 | INFR-04 | Phase 5 | Pending |
-| INFR-05 | Phase 1 | Pending |
+| INFR-05 | Phase 1 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 28 total

@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
+milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-03-27T10:55:32.507Z"
+stopped_at: Completed 01-foundation 01-01-PLAN.md
+last_updated: "2026-03-27T14:34:07.133Z"
 last_activity: 2026-03-26 — Roadmap created for milestone v1.1
 progress:
   total_phases: 5
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 2
+  completed_plans: 1
   percent: 0
 ---
 
@@ -50,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P01 | 3 | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -62,6 +63,8 @@ Recent decisions affecting current work:
 - [Pre-roadmap]: Shift compaction strategy from "prevent" to "recover" — use PostCompact + SessionStart
 - [Pre-roadmap]: Include all P1 + selected P2 backlog items in v2; defer all P3 to v2.1+
 - [Pre-roadmap]: CLAUDE_PLUGIN_ROOT (INFR-01) is a hard blocker — resolve in Phase 1 before anything that depends on template path resolution
+- [Phase 01-foundation]: resolve-root.sh uses grep/sed for version extraction (avoids jq dependency); CLAUDE_PLUGIN_ROOT fallback uses BASH_SOURCE walk-up
+- [Phase 01-foundation]: CLAUDE.md.tmpl two-system architecture: instruction system (static) + learning system (dynamic); critical instructions in first third; autoMemoryDirectory in user/local settings only
 
 ### Pending Todos
 
@@ -75,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-27T10:55:32.504Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation/01-CONTEXT.md
+Last session: 2026-03-27T14:34:07.129Z
+Stopped at: Completed 01-foundation 01-01-PLAN.md
+Resume file: None

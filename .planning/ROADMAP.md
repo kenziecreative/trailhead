@@ -102,7 +102,7 @@ Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. De
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Planning | - |
+| 1. Foundation | 1/2 | In Progress|  |
 | 2. Settings | 0/TBD | Not started | - |
 | 3. Hooks | 0/TBD | Not started | - |
 | 4. Non-Code and Skills | 0/TBD | Not started | - |
