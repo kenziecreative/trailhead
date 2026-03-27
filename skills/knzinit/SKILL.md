@@ -115,7 +115,7 @@ Install hooks from `${KNZINIT_ROOT}/scaffold/hooks/`:
 - `pre-compact-check.sh` → `.claude/hooks/pre-compact-check.sh`
 - `milestone-check.sh` → `.claude/hooks/milestone-check.sh`
 
-Register both in `.claude/settings.json` (merge with existing if present) using the pattern in `${KNZINIT_ROOT}/scaffold/settings.json`.
+Register both in `.claude/settings.json` (merge with existing if present) using the pattern in `${KNZINIT_ROOT}/scaffold/templates/settings.json.tmpl`.
 
 Register the pre-commit secrets hook as a PreToolUse hook in `.claude/settings.json` that triggers when a Bash command contains `git commit`.
 
@@ -141,9 +141,27 @@ Ensure these directories exist:
 
 ## Step 4: Merge Settings
 
-If `.claude/settings.json` already exists, READ it first and merge the new hooks into the existing structure. Never overwrite existing hooks — add alongside them.
+The canonical template is at `${KNZINIT_ROOT}/scaffold/templates/settings.json.tmpl`. It represents the full code/unsure project variant.
 
-If it doesn't exist, create it fresh with all applicable hooks.
+**If `.claude/settings.json` already exists:** READ it first, then merge using these section-specific rules (merge-not-overwrite throughout):
+
+- **hooks**: Append new hook entries to existing hook event arrays. Never remove or overwrite existing hooks — add alongside them.
+- **permissions.deny**: Union of existing deny rules and template deny rules. No duplicates (match on `filePath` + `operations`).
+- **permissions.allow**: Union of existing allow rules and template allow rules. No duplicates (match on `command`).
+- **env**: Preserve all existing keys. Add new keys (`KNZINIT_PROJECT_TYPE`, `KNZINIT_VERSION`) only if not already present.
+- **Scalar keys** (`$schema`, `plansDirectory`): Set if not already present; do not overwrite existing values.
+
+**If `.claude/settings.json` does not exist:** Create it fresh from the template.
+
+**Project-type adaptation:** After merging, apply these adjustments based on the project type from Step 1:
+
+- **Code or "not sure yet":** Use the template as-is. It already represents the code variant. Set `env.KNZINIT_PROJECT_TYPE` to `"code"` or `"unknown"` accordingly.
+- **Non-code:** Remove the entire `permissions.allow` array. Add two keys at the top level:
+  - `"includeGitInstructions": false`
+  - `"keep-coding-instructions": false`
+  - Set `env.KNZINIT_PROJECT_TYPE` to `"noncode"`.
+
+**All project types:** Substitute `{{VERSION}}` in `env.KNZINIT_VERSION` with the actual version from `plugin.json` (use `KNZINIT_VERSION` from `resolve-root.sh`). Set `env.KNZINIT_PROJECT_TYPE` to the normalized value: `code`, `noncode`, or `unknown`.
 
 ## Step 5: Git Commit (if git repo)
 
@@ -169,6 +187,10 @@ After listing the files, show a brief 3-4 line summary of the two-system archite
 > - **Instruction system** (static, human-curated): `CLAUDE.md` + `.claude/rules/` — tells Claude how to behave in this project
 > - **Learning system** (dynamic, session-updated): `STATE.md` + auto memory — tracks what's happening and what's been learned
 > These two systems work together: instructions define the framework; the learning system fills it with project-specific context over time.
+
+If the project type was **non-code**, add:
+
+> **Git instructions disabled.** If you use git for version control, set `includeGitInstructions:true` in `.claude/settings.json`.
 
 If the project type was "not sure yet", add:
 
