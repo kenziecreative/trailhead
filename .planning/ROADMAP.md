@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Hooks** - Implement complete session lifecycle with compaction recovery and error handling (completed 2026-03-27)
 - [x] **Phase 4: Non-Code and Skills** - Add non-code project templates, differentiated interview flow, and handoff/resume skills (completed 2026-03-28)
 - [x] **Phase 5: Infrastructure** - Add MCP template generation and decisions archive with sanity-check integration (completed 2026-03-28)
-- [ ] **Phase 6: Audit Gap Closure** - Fix documentation inconsistencies, SKILL.md instruction gaps, and template polish from v2.0 milestone audit
+- [x] **Phase 6: Audit Gap Closure** - Fix documentation inconsistencies, SKILL.md instruction gaps, and template polish from v2.0 milestone audit (completed 2026-03-28)
 
 ## Phase Details
 
@@ -131,4 +131,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 3. Hooks | 3/3 | Complete | 2026-03-27 |
 | 4. Non-Code and Skills | 3/3 | Complete | 2026-03-28 |
 | 5. Infrastructure | 1/1 | Complete | 2026-03-28 |
-| 6. Audit Gap Closure | 1/2 | In Progress|  |
+| 6. Audit Gap Closure | 2/2 | Complete   | 2026-03-28 |

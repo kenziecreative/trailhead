@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-03-28T12:51:34.551Z"
+stopped_at: Completed 06-02-PLAN.md
+last_updated: "2026-03-28T12:52:35.928Z"
 last_activity: 2026-03-26 — Roadmap created for milestone v1.1
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
   percent: 0
 ---
 
@@ -62,6 +62,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 04-non-code-and-skills P03 | 10min | 1 tasks | 1 files |
 | Phase 05-infrastructure P01 | 2min | 2 tasks | 4 files |
 | Phase 06-audit-gap-closure P01 | 1min | 1 tasks | 1 files |
+| Phase 06-audit-gap-closure P02 | 3min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -101,6 +102,9 @@ Recent decisions affecting current work:
 - [Phase 05-infrastructure]: decisions-archive.md created unconditionally for every project
 - [Phase 05-infrastructure]: enableAllProjectMcpServers uses existing set-if-absent merge rule (not a new merge strategy)
 - [Phase 06-audit-gap-closure]: README rewritten from scratch rather than patched — too many interlocking stale references for safe incremental patching
+- [Phase 06-audit-gap-closure]: mcp.json.tmpl uses _comment key (JSON convention) instead of // comments (invalid JSON)
+- [Phase 06-audit-gap-closure]: SessionEnd passes 'end' as matcher arg so session-end.sh logs 'end' not 'unknown'
+- [Phase 06-audit-gap-closure]: .claude/hooks/ created unconditionally — session hooks install for all projects, not just git repos
 
 ### Pending Todos
 
@@ -114,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T12:51:34.547Z
-Stopped at: Completed 06-01-PLAN.md
+Last session: 2026-03-28T12:52:35.925Z
+Stopped at: Completed 06-02-PLAN.md
 Resume file: None
