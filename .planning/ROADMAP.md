@@ -93,10 +93,10 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. When /knzinit runs on a project that uses external services, a .mcp.json template is generated alongside settings.json with enableAllProjectMcpServers configured
   2. Scaffolded projects include decisions-archive.md, and the sanity-check skill warns the user when STATE.md decisions exceed 20 entries
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — MCP template generation + decisions archive scaffolding + sanity-check overflow warning
 
 ## Progress
 
@@ -111,4 +111,4 @@ Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. De
 | 2. Settings | 1/2 | In progress | - |
 | 3. Hooks | 3/3 | Complete   | 2026-03-27 |
 | 4. Non-Code and Skills | 2/3 | In Progress|  |
-| 5. Infrastructure | 0/TBD | Not started | - |
+| 5. Infrastructure | 0/1 | Not started | - |
