@@ -6,6 +6,37 @@ It scaffolds two systems that work together: an **instruction system** (CLAUDE.m
 
 On top of that foundation, trailhead installs **session lifecycle hooks** — shell scripts that fire automatically when sessions start, end, or lose context to compaction, so Claude always picks up where it left off without the user re-explaining anything. It also includes an **adaptive health check** that only tests what actually exists in the project (build, tests, docs, security) and skips everything else, so it's safe to run from day one.
 
+## Installation
+
+Claude Code loads plugins from directories listed in your settings. To install trailhead:
+
+1. **Clone the repo** somewhere on your machine:
+   ```bash
+   git clone https://github.com/kenziecreative/trailhead.git ~/.claude/plugins/trailhead
+   ```
+
+2. **Register the plugin** in your Claude Code settings (`~/.claude/settings.json`):
+   ```json
+   {
+     "plugins": [
+       "~/.claude/plugins/trailhead"
+     ]
+   }
+   ```
+
+3. **Verify it loaded** by starting Claude Code and running `/trailhead`. The skill should appear and begin the project interview.
+
+You can clone it anywhere — the path in `settings.json` just needs to point to the directory containing `.claude-plugin/plugin.json`.
+
+### Updating
+
+Pull the latest version:
+```bash
+cd ~/.claude/plugins/trailhead && git pull
+```
+
+No restart needed — Claude Code picks up plugin changes on the next session.
+
 ## Code and Non-Code Projects
 
 Not every project is a codebase. Research projects, writing projects, strategy work, and process design all benefit from session continuity and structured state — but they don't need linters, security scanners, or build commands.
