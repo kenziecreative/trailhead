@@ -1,6 +1,7 @@
 #!/bin/bash
 # Pre-commit secrets hook: checks staged files for common secret patterns
-# Registered as PreToolUse hook, triggers when Bash command contains "git commit"
+# Registered as PreToolUse hook on the Bash matcher — fires on any Bash tool use, checks staged files
+# No-op in non-git projects (exits early via is_git_project check).
 
 source "$(dirname "$0")/hook-utils.sh"
 trap 'log_error "pre-commit-secrets" "$BASH_COMMAND failed (line $LINENO)"; exit 0' ERR
