@@ -17,6 +17,19 @@ Ask the user these three questions. **All three accept "not sure yet" as a valid
 
 Wait for answers before proceeding.
 
+## Step 1B: Non-Code Workflow Questions (non-code projects only)
+
+If the user answered "non-code" in Step 1, ask these additional questions before proceeding to Step 2. **All accept "not sure yet" as a valid answer.** Skip this step entirely for code projects and "not sure yet."
+
+1. **What does a typical work session look like?** (e.g., "I research for 30 min then draft for an hour", "I review documents and leave comments")
+2. **What are your main deliverables/outputs?** (e.g., reports, strategies, analyses, documentation)
+3. **What decisions come up repeatedly?** (e.g., "which sources to prioritize", "how to structure recommendations")
+4. **Any domain terminology Claude should know?** (e.g., industry jargon, acronyms, process names)
+
+Use these answers to populate the Work Stages and Session Patterns sections in CLAUDE.md and the open items in STATE.md. If answers are vague or "not sure yet", use the template defaults.
+
+Wait for answers before proceeding.
+
 ## Step 2: Explore What Exists
 
 Before creating anything, check what's already in place:
@@ -30,6 +43,10 @@ Before creating anything, check what's already in place:
 - Does the project have existing security tooling? (ESLint security plugins, Semgrep, pre-commit hooks, etc.)
 
 If anything substantial exists, ask the user how to integrate rather than replacing it.
+
+**Non-code adaptation:** If this is a non-code project, skip the last two bullets (language/framework detection and security tooling checks). Instead, check:
+- Does the project have existing deliverables or documents?
+- Is there an existing workflow or process documented anywhere?
 
 ## Step 3: Build the Scaffolding
 
@@ -58,6 +75,13 @@ Use the templates in `${KNZINIT_ROOT}/scaffold/templates/` as starting points. A
 **CLAUDE.md** (always loaded by Claude Code)
 
 If CLAUDE.md doesn't exist, create it from `${KNZINIT_ROOT}/scaffold/templates/CLAUDE.md.tmpl`. If it does, extend it. The template uses `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, and `{{VERSION}}` placeholders — substitute these with the actual values.
+
+**Template adaptation for non-code:** The templates (`CLAUDE.md.tmpl`, `STATE.md.tmpl`) contain conditional sections marked with `<!-- IF code/unknown -->` and `<!-- IF noncode -->` comment markers. When generating output:
+- For **code** or **not sure yet** projects: include only `<!-- IF code/unknown -->` sections, strip all conditional markers
+- For **non-code** projects: include only `<!-- IF noncode -->` sections, strip all conditional markers
+- The conditional markers themselves must NOT appear in the generated output
+
+For non-code projects, populate the Work Stages and Session Patterns sections using answers from Step 1B. If the user said "not sure yet" to those questions, keep the template placeholder comments.
 
 - What the project is (use the user's description, however vague)
 - "When Starting a Session" section pointing to STATE.md
@@ -106,6 +130,10 @@ Install from `${KNZINIT_ROOT}/scaffold/`:
 
 Install the sanity check skill:
 - `scaffold/skills/sanity-check/SKILL.md` → `.claude/skills/sanity-check/SKILL.md`
+
+**All projects:** Install handoff and resume skills:
+- `scaffold/skills/handoff/SKILL.md` -> `.claude/skills/handoff/SKILL.md`
+- `scaffold/skills/resume/SKILL.md` -> `.claude/skills/resume/SKILL.md`
 
 Adapt each to the project's actual language and framework. If unknown, use the generic versions as-is — they include notes about what to update once the stack is established.
 
@@ -182,6 +210,7 @@ Tell the user what was created and what was adapted. Be specific:
 - Note what was skipped and why
 - If anything was left generic (because the project type is unknown), list what should be updated once the stack is established
 - Remind them that `/sanity-check` is available and adaptive
+- Remind them that `/handoff` captures session state and `/resume` restores orientation
 - Note that this scaffolding works alongside GSD — it won't interfere with GSD's planning structure
 
 After listing the files, show a brief 3-4 line summary of the two-system architecture:
