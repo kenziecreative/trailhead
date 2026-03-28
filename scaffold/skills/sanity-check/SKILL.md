@@ -31,6 +31,7 @@ If no build/test/lint commands are established yet, skip and note: "Code health 
 Read and verify these files are current (check whichever exist):
 
 1. **`.planning/STATE.md`** — Does the current position match reality? Is the last activity date current?
+   - **Decisions overflow:** Count the entries in the Recent Decisions table. If more than 20 entries, warn: "STATE.md has {N} decisions (cap: 20). Archive the oldest {N-20} to `.planning/decisions-archive.md` to keep STATE.md lean."
 2. **`CLAUDE.md`** — Does it reflect the actual project state?
 3. **Auto memory (MEMORY.md)** — Is it populated? Are entries relevant and not stale?
 

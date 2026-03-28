@@ -9,11 +9,12 @@ You are setting up the standard project infrastructure for a new project. This s
 
 ## Step 1: Orientation
 
-Ask the user these three questions. **All three accept "not sure yet" as a valid answer.** Do not force the user down a path — if they don't know, build a flexible foundation that works either way.
+Ask the user these four questions. **All four accept "not sure yet" as a valid answer.** Do not force the user down a path — if they don't know, build a flexible foundation that works either way.
 
 1. **What is this project?** (Even a vague idea is fine. "I'm exploring an idea" is a valid answer.)
 2. **Is this a code project, a non-code project, or not sure yet?**
 3. **Is this already a git repository?** (Check with `git status` first — if it is, tell them and skip the question. If not, ask if they'd like you to initialize one.)
+4. **Does this project use external services (APIs, databases, Slack, etc.)?** (Yes, no, or not sure yet.)
 
 Wait for answers before proceeding.
 
@@ -115,9 +116,13 @@ Create from `${KNZINIT_ROOT}/scaffold/templates/STATE.md.tmpl` with:
 
 Target: under 60 lines.
 
+**decisions-archive.md** — Create from `${KNZINIT_ROOT}/scaffold/templates/decisions-archive.md.tmpl` in `.planning/decisions-archive.md`. Scaffolded for every project. Substitute `{{VERSION}}` with the current version.
+
 **Auto Memory (MEMORY.md)**
 
 Write an initial MEMORY.md in the auto-memory directory with what's known so far. If almost nothing is known, that's fine — write what you have and note that it will be populated as the project develops.
+
+**.mcp.json** (conditional) — If the user answered "yes" to the external services question (Step 1, Q4), create `.mcp.json` in the project root from `${KNZINIT_ROOT}/scaffold/templates/mcp.json.tmpl`. Substitute `{{VERSION}}` with the current version. If the user answered "no" or "not sure yet", skip this file.
 
 ### 3B: Security & Sanity Setup
 
@@ -182,6 +187,8 @@ The canonical template is at `${KNZINIT_ROOT}/scaffold/templates/settings.json.t
 - **env**: Preserve all existing keys. Add new keys (`KNZINIT_PROJECT_TYPE`, `KNZINIT_VERSION`) only if not already present.
 - **Scalar keys** (`$schema`, `plansDirectory`): Set if not already present; do not overwrite existing values.
 
+**MCP integration (conditional):** If `.mcp.json` was generated in Step 3A (user answered "yes" to external services), add `"enableAllProjectMcpServers": true` as a top-level scalar key in settings.json using the set-if-absent rule. If no .mcp.json was generated, do not add this key.
+
 **If `.claude/settings.json` does not exist:** Create it fresh from the template.
 
 **Project-type adaptation:** After merging, apply these adjustments based on the project type from Step 1:
@@ -206,12 +213,13 @@ chore: bootstrap project scaffolding (memory, security, sanity checks)
 
 Tell the user what was created and what was adapted. Be specific:
 
-- List every file created
+- List every file created, including `.planning/decisions-archive.md` (always created) and `.mcp.json` (if created — note it was generated because user indicated external services)
 - Note what was skipped and why
 - If anything was left generic (because the project type is unknown), list what should be updated once the stack is established
 - Remind them that `/sanity-check` is available and adaptive
 - Remind them that `/handoff` captures session state and `/resume` restores orientation
 - Note that this scaffolding works alongside GSD — it won't interfere with GSD's planning structure
+- If `.mcp.json` was created, remind user to populate it with their actual MCP server configurations
 
 After listing the files, show a brief 3-4 line summary of the two-system architecture:
 
