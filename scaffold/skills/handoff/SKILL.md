@@ -1,6 +1,8 @@
 ---
 name: handoff
 description: Capture current session state to STATE.md for seamless session transitions
+disable-model-invocation: true
+allowed-tools: Read, Write, Edit
 ---
 
 # /handoff — Session Handoff

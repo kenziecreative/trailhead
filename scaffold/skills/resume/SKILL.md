@@ -1,6 +1,8 @@
 ---
 name: resume
 description: Read STATE.md and recent changes to output rich session orientation
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash(git log *)
 ---
 
 # /resume — Session Resume
@@ -9,9 +11,13 @@ Output a concise orientation summary so you can pick up where the last session l
 
 Run this when the automatic SessionStart hook output is not enough context.
 
+## Current State
+
+!`cat .planning/STATE.md 2>/dev/null || echo "No STATE.md found."`
+
 ## What to Output
 
-Read `.planning/STATE.md` and produce an **8-15 line orientation** covering:
+Using the state loaded above, produce an **8-15 line orientation** covering:
 
 1. **Current position** — from `## Current Position` section
 2. **Last activity** — from `## Last Activity` section

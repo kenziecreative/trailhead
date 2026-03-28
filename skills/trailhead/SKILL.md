@@ -1,6 +1,8 @@
 ---
 name: trailhead
 description: Bootstrap a new project with two-system architecture (instruction + learning), security agents, and sanity checks
+argument-hint: "[project-name]"
+disable-model-invocation: true
 ---
 
 # /trailhead — Project Scaffolding

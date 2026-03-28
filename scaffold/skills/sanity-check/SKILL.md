@@ -1,6 +1,8 @@
 ---
 name: sanity-check
 description: Verify project health before context clear, milestone completion, or deployment
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash
 ---
 
 # /sanity-check
