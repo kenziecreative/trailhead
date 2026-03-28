@@ -79,10 +79,12 @@ Plans:
   3. Non-code projects get a project-appropriate health check skill that does not reference security scanning, dependency audits, or code linting
   4. Non-code projects get a STATE.md template with domain-appropriate fields (e.g., current document, stakeholders, open decisions) rather than code-oriented fields
   5. /handoff captures current state to STATE.md with a structured summary; /resume reads STATE.md and outputs orientation without requiring user to re-explain context
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Non-code templates (CLAUDE.md.tmpl, STATE.md.tmpl) + adaptive sanity-check
+- [ ] 04-02-PLAN.md — /handoff and /resume skill creation
+- [ ] 04-03-PLAN.md — SKILL.md orchestrator updates (interview branch + skill installation)
 
 ### Phase 5: Infrastructure
 **Goal**: Projects using external services get an MCP configuration template, and the decisions archive pattern is scaffolded with automated overflow warnings
@@ -99,7 +101,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. Default execution order is sequential; phases 2-4 could parallelize if needed.
 
@@ -108,5 +110,5 @@ Note: Phases 2, 3, and 4 all depend on Phase 1 but are otherwise independent. De
 | 1. Foundation | 2/2 | Complete   | 2026-03-27 |
 | 2. Settings | 1/2 | In progress | - |
 | 3. Hooks | 3/3 | Complete   | 2026-03-27 |
-| 4. Non-Code and Skills | 0/TBD | Not started | - |
+| 4. Non-Code and Skills | 0/3 | Not started | - |
 | 5. Infrastructure | 0/TBD | Not started | - |
