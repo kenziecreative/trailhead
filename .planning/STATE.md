@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 5 context gathered
-last_updated: "2026-03-28T04:04:24.846Z"
+stopped_at: Completed 05-infrastructure-05-01-PLAN.md
+last_updated: "2026-03-28T04:18:20.346Z"
 last_activity: 2026-03-26 — Roadmap created for milestone v1.1
 progress:
   total_phases: 5
-  completed_phases: 4
-  total_plans: 10
-  completed_plans: 10
+  completed_phases: 5
+  total_plans: 11
+  completed_plans: 11
   percent: 0
 ---
 
@@ -60,6 +60,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 04-non-code-and-skills P01 | 5min | 2 tasks | 3 files |
 | Phase 04-non-code-and-skills P02 | 1min | 2 tasks | 2 files |
 | Phase 04-non-code-and-skills P03 | 10min | 1 tasks | 1 files |
+| Phase 05-infrastructure P01 | 2min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -94,6 +95,10 @@ Recent decisions affecting current work:
 - [Phase 04-non-code-and-skills]: Both /handoff and /resume are project-type agnostic: same structure works for code, non-code, and unknown
 - [Phase 04-non-code-and-skills]: Step 1B skips for code and not-sure-yet — not-sure-yet defaults to code variant (consistent with Phase 2 decision)
 - [Phase 04-non-code-and-skills]: Template adaptation instructions placed in Step 3A after CLAUDE.md creation paragraph; /handoff and /resume installed for all project types in Step 3B
+- [Phase 05-infrastructure]: Q4 (external services) asked for ALL project types — not gated on code/non-code
+- [Phase 05-infrastructure]: .mcp.json generation is yes-only: both no and not-sure-yet skip the file
+- [Phase 05-infrastructure]: decisions-archive.md created unconditionally for every project
+- [Phase 05-infrastructure]: enableAllProjectMcpServers uses existing set-if-absent merge rule (not a new merge strategy)
 
 ### Pending Todos
 
@@ -107,6 +112,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T04:04:24.841Z
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-infrastructure/05-CONTEXT.md
+Last session: 2026-03-28T04:18:20.343Z
+Stopped at: Completed 05-infrastructure-05-01-PLAN.md
+Resume file: None

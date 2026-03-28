@@ -49,8 +49,8 @@ Requirements for knzinit v2 release. Each maps to roadmap phases.
 
 - [x] **INFR-01**: CLAUDE_PLUGIN_ROOT verified as stable, or fallback path resolution added if unstable (B-29)
 - [x] **INFR-02**: All scaffolded files include version marker as HTML comment (<!-- knzinit v2.0.0 -->) (B-21)
-- [ ] **INFR-03**: Scaffold generates .mcp.json template for projects using external services, with enableAllProjectMcpServers in settings (B-19)
-- [ ] **INFR-04**: Scaffold generates decisions-archive.md and sanity check warns when STATE.md decisions exceed 20-entry cap (B-20)
+- [x] **INFR-03**: Scaffold generates .mcp.json template for projects using external services, with enableAllProjectMcpServers in settings (B-19)
+- [x] **INFR-04**: Scaffold generates decisions-archive.md and sanity check warns when STATE.md decisions exceed 20-entry cap (B-20)
 - [x] **INFR-05**: Generated CLAUDE.md includes guidance on scope-restricted settings (autoMemoryDirectory, autoMode) that users must configure at user/local scope (B-24)
 
 ## v2 Requirements
@@ -108,8 +108,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SKIL-02 | Phase 4 | Complete |
 | INFR-01 | Phase 1 | Complete |
 | INFR-02 | Phase 1 | Complete |
-| INFR-03 | Phase 5 | Pending |
-| INFR-04 | Phase 5 | Pending |
+| INFR-03 | Phase 5 | Complete |
+| INFR-04 | Phase 5 | Complete |
 | INFR-05 | Phase 1 | Complete |
 
 **Coverage:**
