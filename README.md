@@ -55,10 +55,10 @@ knzinit sets up the infrastructure that keeps a project healthy across sessions.
 knzinit is step 4 in the project lifecycle pipeline:
 
 ```
-/knz-research → /knz-generateprd → Design OS → /knzinit → /gsd:new-project → build
+Research → Generate PRD → Design → /knzinit → Start Project → Build
 ```
 
-By the time knzinit runs, the product is defined and designed. knzinit scaffolds the build environment so GSD can focus on execution.
+By the time knzinit runs, the product is defined and designed. knzinit scaffolds the build environment so the project can focus on execution.
 
 ## Skills
 
